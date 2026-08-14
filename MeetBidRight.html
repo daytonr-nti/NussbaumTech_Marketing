@@ -220,6 +220,11 @@
 #bidright-page .br-hero-content { position: relative; text-align: center; }
 #bidright-page .br-hero h1 { margin-top: 24px; max-width: 1100px; margin-inline: auto; }
 #bidright-page .br-hero h1 .blue { color: var(--blue); }
+#bidright-page .br-hero-kicker {
+  display: block; font-size: clamp(30px, 4.3vw, 60px);
+  font-weight: 500; letter-spacing: -0.02em; line-height: 1.15;
+  color: var(--ink-1); margin-bottom: 8px;
+}
 #bidright-page .br-hero .lead { margin-top: 28px; margin-inline: auto; text-align: center; max-width: 680px; }
 #bidright-page .br-hero-ctas { display: inline-flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; justify-content: center; }
 
@@ -245,14 +250,24 @@
 #bidright-page .br-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: clamp(56px, 7vw, 96px);
+  margin-top: clamp(20px, 2.6vw, 34px);
   max-width: 1080px; margin-inline: auto;
-  border-top: 1px solid var(--line-1);
-  border-bottom: 1px solid var(--line-1);
+  border: 1px solid var(--line-2);
+  border-radius: 18px;
+  background: var(--bg-3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  overflow: hidden;
 }
-#bidright-page .br-stat { padding: 28px 16px; border-left: 1px solid var(--line-1); text-align: center; }
+#bidright-page .br-stat { padding: 28px 16px; border-left: 1px solid var(--line-2); text-align: center; }
+#bidright-page .br-stat:first-child { border-left: none; }
 #bidright-page .br-stat-n { font-size: clamp(28px, 3vw, 36px); font-weight: 600; letter-spacing: -0.02em; color: #fff; }
 #bidright-page .br-stat-l { font-size: 13px; color: var(--ink-3); margin-top: 6px; }
+#bidright-page .br-stats-src {
+  grid-column: 1 / -1; border-top: 1px solid var(--line-2);
+  background: rgba(0,0,0,0.22);
+  padding: 11px 20px; text-align: center;
+  font-size: 11.5px; color: var(--ink-3); opacity: 0.7;
+}
 
 /* ── Capabilities ── */
 #bidright-page .br-capabilities { background: var(--bg-1); position: relative; }
@@ -601,7 +616,7 @@
       Meet BidRight
     </div>
     <h1 class="display-xl">
-      Bid faster. Bid smarter.<br />
+      <span class="br-hero-kicker">Bid faster. Bid smarter.</span>
       <span class="blue">BidRight.</span>
     </h1>
     <p class="lead">
@@ -625,8 +640,9 @@
 
     <div class="br-stats">
       <div class="br-stat"><div class="br-stat-n tnum">20×</div><div class="br-stat-l">faster bidding</div></div>
-      <div class="br-stat"><div class="br-stat-n tnum">15×</div><div class="br-stat-l">faster team review</div></div>
+      <div class="br-stat"><div class="br-stat-n tnum">5%</div><div class="br-stat-l">above market on contract rates</div></div>
       <div class="br-stat"><div class="br-stat-n tnum">4,200</div><div class="br-stat-l">lanes in 30 seconds</div></div>
+      <div class="br-stats-src">Measured at Nussbaum Transportation: 20&times; faster bid generation versus their prior process, and contract rates 5% above market across 10 consecutive quarters.</div>
     </div>
   </div>
 </section>
@@ -780,7 +796,7 @@
       <div class="br-deep-copy">
         <div class="eyebrow blue">Lane Pricing</div>
         <h3>Every lane gets its own number.</h3>
-        <p>One average dragged across a whole bid leaves money on the table. BidRight puts your FreightMath OR next to the market on every row, so you set each rate knowing what that lane actually does.</p>
+        <p>One average dragged across a whole bid leaves money on the table. BidRight puts your Network OR next to the market on every row, so you set each rate knowing what that lane actually does.</p>
         <ul class="br-deep-points">
           <li><span class="material-symbols-rounded">check_circle</span><span>Operating ratio from your General Ledger, historical on the lane and modeled live as you move the rate</span></li>
           <li><span class="material-symbols-rounded">check_circle</span><span>Enter one RPM. BidRight translates it per shipper, accounting for fuel program, miles, and terms</span></li>
@@ -792,7 +808,7 @@
           <div class="br-panel-glow" aria-hidden="true"></div>
           <div class="br-panel-body">
             <div class="br-lane-head">
-              <span>Lane</span><span>FM OR</span><span class="right">Market</span><span class="right">Your rate</span>
+              <span>Lane</span><span>Network OR</span><span class="right">Market</span><span class="right">Your rate</span>
             </div>
             <div class="br-lane-list">
               <div class="br-lane-row">
@@ -844,13 +860,13 @@
             <span class="material-symbols-rounded" style="font-size:14px;">auto_awesome</span>
             Auto Rate (AI)
           </div>
-          <h3>A pricing analyst that explains itself.</h3>
-          <p>Auto Rate prices every lane you marked interest on, then shows what it anchored on: your inbound, core, and outbound OR next to the market data you already load. No black box.</p>
+          <h3>Your personal pricing analyst.</h3>
+          <p>Auto Rate prices every lane you marked interest on, then shows its work: your inbound, core, and outbound OR next to the market data you already load.</p>
           <div class="br-ai-proof">
             <span class="n tnum">1 in 4</span>
-            <span class="l">priced lanes go out exactly as Auto Rate set them.</span>
+            <span class="l">rates go out untouched.</span>
           </div>
-          <div class="br-ai-sub">Your analysts tune the rest. Every lane starts from a real number instead of a blank cell.</div>
+          <div class="br-ai-sub">The rest start from a real number, not a blank cell.</div>
           <a href="https://nussbaumtech.com/join-bidright/" class="btn btn-primary" style="margin-top:26px;">Join Early Access
             <span class="material-symbols-rounded">arrow_forward</span>
           </a>
@@ -867,6 +883,10 @@
           <div class="br-ai-bit">
             <div class="br-ai-bit-icon"><span class="material-symbols-rounded">shield_question</span></div>
             <div><div class="t">Honest about thin data</div><div class="b">When a lane's data is too thin to rate, it tells you</div></div>
+          </div>
+          <div class="br-ai-bit">
+            <div class="br-ai-bit-icon"><span class="material-symbols-rounded">trending_up</span></div>
+            <div><div class="t">Sharper every bid you run</div><div class="b">It anchors on your own history, so it gets better as yours grows. Your data stays yours</div></div>
           </div>
         </div>
       </div>
